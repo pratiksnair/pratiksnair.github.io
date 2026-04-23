@@ -425,125 +425,15 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 700px) {
-      body {
-        padding: 10px;
-      }
-
-      .wrapper {
-        border-radius: 0;
-      }
-
       nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 12px;
         padding: 16px 20px;
       }
 
-      .nav-left {
-        font-size: 11px;
-      }
+      .hero { padding: 40px 20px 36px; }
 
-      .nav-center {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 20px;
-      }
-
-      .nav-center a {
-        font-size: 13px;
-      }
-
-      .nav-right {
-        width: 100%;
-      }
-
-      .nav-right a {
-        font-size: 12px;
-      }
-
-      .hero { 
-        padding: 30px 20px 30px; 
-      }
-
-      .hero-subtitle {
-        font-size: 11px;
-        margin-bottom: 20px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        line-height: 1.1;
-      }
-
-      .hero-titles {
-        margin-bottom: 16px;
-      }
-
-      .hero-titles strong {
-        font-size: 13px;
-        line-height: 1.5;
-      }
-
-      .hero-content-wrapper {
-        flex-direction: column;
-        gap: 12px;
-        margin-bottom: 24px;
-        max-width: 100%;
-      }
-
-      .red-line {
-        width: 100%;
-        min-height: 3px;
-        height: 3px;
-        margin-top: 0;
-      }
-
-      .hero-text {
-        font-size: 13px;
-        line-height: 1.6;
-      }
-
-      .hero-cta {
-        font-size: 12px;
-        padding: 9px 18px;
-      }
-
-      #projects { 
-        padding: 40px 20px; 
-      }
-
-      .section-label {
-        font-size: 11px;
-        margin-bottom: 28px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .project-thumb-placeholder {
-        height: 160px;
-        font-size: 22px;
-      }
-
-      .project-info {
-        padding: 16px;
-      }
-
-      .project-tag {
-        font-size: 10px;
-      }
-
-      .project-info h3 {
-        font-size: 16px;
-      }
-
-      .project-info p {
-        font-size: 12px;
-      }
+      #projects { padding: 40px 20px; }
 
       #about {
         grid-template-columns: 1fr;
@@ -551,62 +441,9 @@
         padding: 40px 20px;
       }
 
-      .about-left h2 {
-        font-size: 32px;
-        margin-bottom: 16px;
-      }
+      #contact { padding: 40px 20px; }
 
-      .about-left p {
-        font-size: 13px;
-        line-height: 1.7;
-      }
-
-      .about-right h3 {
-        font-size: 13px;
-        margin-top: 20px;
-      }
-
-      .skills-list li {
-        font-size: 11px;
-        padding: 4px 10px;
-      }
-
-      #contact { 
-        padding: 40px 20px; 
-      }
-
-      .contact-inner { 
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      .contact-left h2 {
-        font-size: 28px;
-      }
-
-      .contact-left p {
-        font-size: 13px;
-        max-width: 100%;
-      }
-
-      .contact-item label {
-        font-size: 10px;
-      }
-
-      .contact-item a,
-      .contact-item span {
-        font-size: 13px;
-      }
-
-      .footer-bottom {
-        margin-top: 40px;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-bottom p {
-        font-size: 11px;
-      }
+      .contact-inner { flex-direction: column; }
     }
   </style>
 </head>

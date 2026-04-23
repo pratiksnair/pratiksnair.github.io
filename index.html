@@ -116,6 +116,226 @@
     .hero {
       padding: 60px 40px 50px;
       border-bottom: 1px solid #e0e0e0;
+      position: relative;
+    }
+
+    .robot-container {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      pointer-events: none;
+      z-index: 10;
+      perspective: 1000px;
+    }
+
+    .robot {
+      width: 80px;
+      height: 100px;
+      position: absolute;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform-style: preserve-3d;
+    }
+
+    .robot-head {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      position: relative;
+      margin: 0 auto;
+      box-shadow: 
+        0 8px 20px rgba(102, 126, 234, 0.4),
+        0 4px 10px rgba(0,0,0,0.3),
+        inset -2px -2px 8px rgba(0,0,0,0.2),
+        inset 2px 2px 8px rgba(255,255,255,0.1);
+      transform-style: preserve-3d;
+      transform: translateZ(20px);
+    }
+
+    .robot-head::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      height: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+      border-radius: 8px 8px 0 0;
+      pointer-events: none;
+    }
+
+    .robot-antenna {
+      width: 3px;
+      height: 15px;
+      background: linear-gradient(180deg, #667eea 0%, #8b9bef 100%);
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%) translateZ(10px);
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .robot-antenna::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, #ffd93d 0%, #f39c12 50%, #e67e22 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%) translateZ(5px);
+      box-shadow: 
+        0 0 15px #f39c12,
+        0 0 30px rgba(243, 156, 18, 0.5),
+        0 2px 4px rgba(0,0,0,0.3);
+      animation: blink 2s infinite;
+    }
+
+    .robot-eyes {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .robot-eye {
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle at 30% 30%, #ffffff 0%, #f0f0f0 50%, #e0e0e0 100%);
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.3),
+        0 2px 4px rgba(0,0,0,0.2),
+        0 0 8px rgba(255,255,255,0.5);
+      transform: translateZ(5px);
+    }
+
+    .robot-eye .pupil {
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle at 30% 30%, #3d5a80 0%, #2c3e50 50%, #1a252f 100%);
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: all 0.1s;
+      box-shadow: 
+        0 1px 2px rgba(0,0,0,0.5),
+        inset 0 1px 1px rgba(255,255,255,0.1);
+    }
+
+    .robot-mouth {
+      width: 20px;
+      height: 3px;
+      background: linear-gradient(180deg, #ffffff 0%, #e0e0e0 100%);
+      border-radius: 2px;
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%) translateZ(5px);
+      box-shadow: 
+        0 1px 2px rgba(0,0,0,0.3),
+        inset 0 1px 1px rgba(255,255,255,0.5);
+    }
+
+    .robot-body {
+      width: 60px;
+      height: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      margin: 5px auto 0;
+      position: relative;
+      box-shadow: 
+        0 10px 25px rgba(102, 126, 234, 0.4),
+        0 5px 12px rgba(0,0,0,0.3),
+        inset -3px -3px 10px rgba(0,0,0,0.2),
+        inset 3px 3px 10px rgba(255,255,255,0.1);
+      transform-style: preserve-3d;
+      transform: translateZ(10px);
+    }
+
+    .robot-body::before,
+    .robot-body::after {
+      content: '';
+      width: 4px;
+      height: 25px;
+      background: linear-gradient(180deg, #7a8fec 0%, #667eea 50%, #5a6fd8 100%);
+      position: absolute;
+      top: 5px;
+      border-radius: 2px;
+      box-shadow: 
+        0 3px 8px rgba(0,0,0,0.3),
+        inset -1px -1px 3px rgba(0,0,0,0.3),
+        inset 1px 1px 3px rgba(255,255,255,0.2);
+    }
+
+    .robot-body::before {
+      left: -8px;
+    }
+
+    .robot-body::after {
+      right: -8px;
+    }
+
+    .robot-legs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 3px;
+    }
+
+    .robot-leg {
+      width: 6px;
+      height: 20px;
+      background: linear-gradient(180deg, #7a8fec 0%, #667eea 50%, #5a6fd8 100%);
+      border-radius: 3px;
+      box-shadow: 
+        0 4px 8px rgba(0,0,0,0.3),
+        inset -1px -1px 4px rgba(0,0,0,0.3),
+        inset 1px 1px 4px rgba(255,255,255,0.2);
+      transform: translateZ(5px);
+    }
+
+    @keyframes blink {
+      0%, 48%, 52%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    @media (max-width: 1100px) {
+      .robot-container {
+        right: 20px;
+        width: 150px;
+        height: 150px;
+      }
+
+      .robot {
+        width: 60px;
+        height: 80px;
+      }
+
+      .robot-head {
+        width: 40px;
+        height: 40px;
+      }
+
+      .robot-body {
+        width: 48px;
+        height: 32px;
+      }
+
+      .robot-leg {
+        width: 5px;
+        height: 16px;
+      }
     }
 
     .hero-subtitle {
@@ -154,6 +374,26 @@
       line-height: 1.6;
     }
 
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 700;
+      color: #fff;
+      margin-left: 4px;
+      vertical-align: super;
+      position: relative;
+      top: -2px;
+    }
+
+    .badge-java { background: #007396; }
+    .badge-python { background: #3776ab; }
+    .badge-cpp { background: #00599c; }
+
     .hero-content-wrapper {
       display: flex;
       gap: 20px;
@@ -164,7 +404,7 @@
 
     .red-line {
       width: 3px;
-      min-height: 120px;
+      min-height: 70px;
       background: #e63946;
       border-radius: 2px;
       flex-shrink: 0;
@@ -425,6 +665,18 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 700px) {
+      body {
+        padding: 10px;
+      }
+
+      .wrapper {
+        border-radius: 0;
+      }
+
+      .robot-container {
+        display: none;
+      }
+
       nav {
         flex-wrap: wrap;
         gap: 12px;
@@ -474,11 +726,37 @@
 
   <!-- ─── HERO ─── -->
   <section class="hero">
+    <div class="robot-container">
+      <div class="robot" id="robot">
+        <div class="robot-head">
+          <div class="robot-antenna"></div>
+          <div class="robot-eyes">
+            <div class="robot-eye">
+              <div class="pupil"></div>
+            </div>
+            <div class="robot-eye">
+              <div class="pupil"></div>
+            </div>
+          </div>
+          <div class="robot-mouth"></div>
+        </div>
+        <div class="robot-body"></div>
+        <div class="robot-legs">
+          <div class="robot-leg"></div>
+          <div class="robot-leg"></div>
+        </div>
+      </div>
+    </div>
+
     <p class="hero-subtitle">Available for freelance &amp; full-time opportunities</p>
     <h1>Pratik Nair<br>Software Developer</h1>
     
     <div class="hero-titles">
-      <strong>ASE @ Harman International</strong>
+      <strong>ASE @ Harman International
+        <span class="tech-badge badge-java">J</span>
+        <span class="tech-badge badge-python">Py</span>
+        <span class="tech-badge badge-cpp">C++</span>
+      </strong>
       <strong>Backend Engineer · Cybersecurity Developer</strong>
     </div>
 
@@ -622,6 +900,70 @@
   </section>
 
 </div><!-- /wrapper -->
+
+<script>
+  // Robot follows cursor
+  const robot = document.getElementById('robot');
+  const robotContainer = document.querySelector('.robot-container');
+  const heroSection = document.querySelector('.hero');
+  
+  if (robot && robotContainer && heroSection) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const containerRect = robotContainer.getBoundingClientRect();
+      const heroRect = heroSection.getBoundingClientRect();
+      
+      // Calculate mouse position relative to hero section
+      const mouseX = e.clientX - heroRect.left;
+      const mouseY = e.clientY - heroRect.top;
+      
+      // Calculate container center position
+      const containerCenterX = containerRect.left - heroRect.left + containerRect.width / 2;
+      const containerCenterY = containerRect.top - heroRect.top + containerRect.height / 2;
+      
+      // Calculate angle and distance
+      const deltaX = mouseX - containerCenterX;
+      const deltaY = mouseY - containerCenterY;
+      const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      
+      // Limit movement to within container
+      const maxMove = 60;
+      const moveRatio = Math.min(distance / 200, 1);
+      const moveX = (deltaX / distance) * maxMove * moveRatio;
+      const moveY = (deltaY / distance) * maxMove * moveRatio;
+      
+      // Apply transform with 3D rotation
+      const rotateY = (moveX / maxMove) * 15; // Max 15 degrees rotation
+      const rotateX = -(moveY / maxMove) * 15; // Max 15 degrees rotation
+      robot.style.transform = `translate(${moveX}px, ${moveY}px) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+      
+      // Move eyes to follow cursor
+      const pupils = robot.querySelectorAll('.pupil');
+      pupils.forEach((pupil) => {
+        const eye = pupil.parentElement;
+        const eyeRect = eye.getBoundingClientRect();
+        const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+        const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+        
+        const eyeDeltaX = e.clientX - eyeCenterX;
+        const eyeDeltaY = e.clientY - eyeCenterY;
+        const eyeAngle = Math.atan2(eyeDeltaY, eyeDeltaX);
+        
+        const eyeMoveX = Math.cos(eyeAngle) * 2;
+        const eyeMoveY = Math.sin(eyeAngle) * 2;
+        
+        pupil.style.transform = `translate(${eyeMoveX}px, ${eyeMoveY}px)`;
+      });
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+      robot.style.transform = 'translate(0, 0) rotateY(0deg) rotateX(0deg)';
+      const pupils = robot.querySelectorAll('.pupil');
+      pupils.forEach(pupil => {
+        pupil.style.transform = 'translate(0, 0)';
+      });
+    });
+  }
+</script>
 
 </body>
 </html>

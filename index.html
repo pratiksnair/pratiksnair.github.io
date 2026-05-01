@@ -631,10 +631,54 @@
       letter-spacing: 0.06em;
       margin-bottom: 14px;
       margin-top: 24px;
+      cursor: pointer;
+      position: relative;
+      user-select: none;
     }
 
     .about-right h3:first-child {
       margin-top: 0;
+    }
+
+    .about-right h3::after {
+      content: '▼';
+      position: absolute;
+      right: 0;
+      font-size: 10px;
+      transition: transform 0.3s;
+    }
+
+    .about-right h3.collapsed::after {
+      transform: rotate(-90deg);
+    }
+
+    .collapsible-content {
+      max-height: 1000px;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out, opacity 0.3s ease-out, background-color 0.3s ease-out;
+      opacity: 1;
+      padding: 0;
+      background: transparent;
+    }
+
+    .collapsible-content:not(.collapsed) {
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .collapsible-content.collapsed {
+      max-height: 0;
+      opacity: 0;
+      padding: 0;
+    }
+
+    .education-text {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.8;
+      margin: 0;
     }
 
     .skills-list {
@@ -898,44 +942,58 @@ runnable with one command: streamlit run chatbot.py.</p>
     <div class="certifications-grid">
 
       <div class="certification-card">
-        <img src="aws-cert.jpg" alt="AWS Certification" class="cert-icon">
+        <img src="aws-cert.jpg" alt="Machine Learning" class="cert-icon">
         <div class="cert-info">
-          <h3>AWS Certified Solutions Architect</h3>
-          <p class="cert-issuer">Amazon Web Services</p>
-          <p class="cert-date">Issued: March 2024</p>
-          <p class="cert-desc">Demonstrated expertise in designing distributed systems and architecting scalable solutions on AWS.</p>
+          <h3>NPTEL Certified ML Engineer</h3>
+          <p class="cert-issuer">NPTEL</p>
+          <p class="cert-desc">Demonstrated expertise in machine learning concepts and applications</p>
         </div>
       </div>
 
       <div class="certification-card">
-        <img src="ceh-cert.jpg" alt="CEH Certification" class="cert-icon">
+        <img src="ceh-cert.jpg" alt="Cloud Computing" class="cert-icon">
         <div class="cert-info">
-          <h3>Certified Ethical Hacker (CEH)</h3>
-          <p class="cert-issuer">EC-Council</p>
-          <p class="cert-date">Issued: January 2024</p>
-          <p class="cert-desc">Certified in identifying vulnerabilities and securing systems using ethical hacking methodologies.</p>
+          <h3>NPTEL Certified Cloud Engineer</h3>
+          <p class="cert-issuer">NPTEL</p>
+          <p class="cert-desc">Certified in cloud computing concepts and applications.</p>
         </div>
       </div>
 
       <div class="certification-card">
-        <img src="python-cert.jpg" alt="Python Certification" class="cert-icon">
+        <img src="python-cert.jpg" alt="AI Governance" class="cert-icon">
         <div class="cert-info">
-          <h3>Python for Data Science</h3>
-          <p class="cert-issuer">IBM</p>
-          <p class="cert-date">Issued: November 2023</p>
-          <p class="cert-desc">Completed comprehensive training in Python programming for data analysis and machine learning applications.</p>
+          <h3>Securiti AI certified AI Governor</h3>
+          <p class="cert-issuer">Securiti AI</p>
+          <p class="cert-desc">Certified in AI governance and ethical AI practices.</p>
         </div>
       </div>
 
       <div class="certification-card">
-        <img src="java-cert.jpg" alt="Java Certification" class="cert-icon">
+        <img src="java-cert.jpg" alt="Prompt Engineering" class="cert-icon">
         <div class="cert-info">
-          <h3>Oracle Certified Java Developer</h3>
-          <p class="cert-issuer">Oracle</p>
-          <p class="cert-date">Issued: August 2023</p>
-          <p class="cert-desc">Validated knowledge of Java programming fundamentals and object-oriented development principles.</p>
+          <h3>CodeSignal certified Prompt Engineer</h3>
+          <p class="cert-issuer">CodeSignal</p>
+          <p class="cert-desc">Validated knowledge of prompt engineering and AI interaction design principles.</p>
         </div>
       </div>
+
+        <div class="certification-card">
+          <img src="java-cert.jpg" alt="Big Data Computing" class="cert-icon">
+          <div class="cert-info">
+            <h3>NPTEL certified Big Data Engineer</h3>
+            <p class="cert-issuer">NPTEL</p>
+            <p class="cert-desc">Validated knowledge of big data computing and analytics principles.</p>
+          </div>
+        </div>
+
+        <div class="certification-card">
+          <img src="java-cert.jpg" alt="Data Visualization" class="cert-icon">
+          <div class="cert-info">
+            <h3>CodeSignal certified Data Visualization Engineer</h3>
+            <p class="cert-issuer">CodeSignal</p>
+            <p class="cert-desc">Validated knowledge of data visualization principles and data engineering techniques.</p>
+          </div>
+        </div>
 
     </div>
   </section>
@@ -945,23 +1003,46 @@ runnable with one command: streamlit run chatbot.py.</p>
     <div class="about-left">
       <h2>About<br>Me</h2>
       <p>
-        Hey! I'm Pratik — a passionate developer and designer based in India.
-        I love crafting clean, performant web experiences that sit at the
-        intersection of great code and thoughtful design.
-      </p>
-      <p>
-        With experience across the full stack, I'm comfortable working from
-        Figma mockups all the way through to deployment. I care deeply about
-        accessibility, performance, and writing code that's easy to maintain.
-      </p>
-      <p>
-        When I'm not coding, you'll find me exploring new design trends,
-        tinkering with side projects, or enjoying a good cup of coffee ☕
+        <strong>MCA</strong> graduate and Associate Software Engineer at <strong>Harman International</strong> with hands-on experience across the full software development 
+        spectrum — from building <strong>AI/ML</strong> web apps (<strong>TensorFlow</strong>, <strong>OpenCV</strong>, <strong>Flask</strong>) and writing automated test pipelines (<strong>JUnit 5</strong>, <strong>GTest</strong>, <strong>Jenkins</strong>, <strong>AWS</strong>) 
+        to cybersecurity development (<strong>Linux</strong>, <strong>TCP</strong>, <strong>Oracle</strong>) and <strong>generative AI prompt engineering</strong>. Proficient in <strong>Python</strong>, <strong>Java</strong>, <strong>C++</strong>, <strong>Linux</strong>, <strong>Git</strong>, <strong>AWS</strong>, 
+        <strong>AOSP</strong>, <strong>CAN/UDS protocols</strong>, <strong>PyAutoGUI</strong>, and <strong>CI/CD</strong> (<strong>Jenkins</strong> + <strong>Gradle</strong>) — with real-world delivery experience on embedded automotive systems at 
+        <strong>Harman International</strong>, a <strong>top 5%</strong> ranking in <strong>NPTEL's</strong> <strong>Cloud Computing</strong> certification among <strong>24,000+</strong> candidates, and independently deployed <strong>ML</strong> 
+        projects on <strong>GitHub</strong>. A multi-domain engineer who ships — whether it's securing <strong>Linux</strong> systems, automating <strong>ReadyCQuenceLoop</strong>, training <strong>CNNs</strong>, 
+        or stress-testing firmware — consistently recognized for teamwork and performance under agile sprint pressure.
       </p>
     </div>
 
     <div class="about-right">
-      <h3>Skills</h3>
+            <h3 onclick="toggleSection(this)" class="collapsed">Education</h3>
+      <div class="collapsible-content collapsed">
+        <p class="education-text">
+          <strong>Master's in Computer Applications</strong><br>
+          Hiray ICA<br>
+          Graduated: 2025<br>
+          CGPA: 8.5<br>
+          <br>
+          <strong>Bachelor's in Science : IT</strong><br>
+          TCSC (Autonomous)<br>
+          Graduated: 2023<br>
+          CGPA: 9.1<br>
+          <br>
+          <strong>HSC</strong><br>
+          Bhavan's Andheri (Autonomous)<br>
+          Graduated: 2023<br>
+          Grading: First Class<br>
+          <br>
+          <strong>SSC</strong><br>
+          St John The Evangelist High School, Andheri<br>
+          Graduated: 2021<br>
+          Grading: Distinction<br>
+          <br>
+
+        </p>
+      </div>
+      
+      <h3 onclick="toggleSection(this)" class="collapsed">Skills</h3>
+      <div class="collapsible-content collapsed">
       <ul class="skills-list">
         <li>HTML5</li>
         <li>CSS3</li>
@@ -975,21 +1056,33 @@ runnable with one command: streamlit run chatbot.py.</p>
         <li>Firebase</li>
         <li>Tailwind CSS</li>
         <li>SQL</li>
+        <li>MongoDB</li>
+        <li>Docker</li>
+        <li>CI/CD</li>
+        <li>Linux</li>
+        <li>AWS</li>
+        <li>JUnit 5</li>
+        <li>GTest</li>
+        <li>Jenkins</li>
+        <li>Gradle</li>
+        <li>AOSP</li>
+        <li>CAN/UDS protocols</li>
+        <li>PyAutoGUI</li>
+        <li>TensorFlow/Keras</li>
+        <li>OpenCV</li>
+        <li>Flask</li>
+        <li>Streamlit</li>
+        <li>Generative AI Prompt Engineering</li>
+        <li>Cybersecurity Development</li>
+        <li>AI/ML</li>
+        <li>Backend Development</li>
+        <li>Software Testing & Automation</li>
+        <li>Embedded Systems</li>
+        <li>Automotive Software</li>
+        <li>Java</li>
+        <li>C++</li>
       </ul>
-
-      <h3>Education</h3>
-      <ul class="skills-list">
-        <li>B.Tech Computer Science</li>
-        <li>Graduated 2025</li>
-      </ul>
-
-      <h3>Interests</h3>
-      <ul class="skills-list">
-        <li>UI/UX Design</li>
-        <li>Open Source</li>
-        <li>Photography</li>
-        <li>Tech Blogs</li>
-      </ul>
+      </div>
     </div>
   </section>
 
@@ -1006,6 +1099,10 @@ runnable with one command: streamlit run chatbot.py.</p>
       </div>
 
       <div class="contact-details">
+        <div class="contact-item">
+          <label>Phone</label>
+          <span>+91-9987044547</span>
+        </div>
         <div class="contact-item">
           <label>Email</label>
           <a href="mailto:pratiksnair@gmail.com">pratiksnair@gmail.com</a>
@@ -1094,6 +1191,13 @@ runnable with one command: streamlit run chatbot.py.</p>
         pupil.style.transform = 'translate(0, 0)';
       });
     });
+  }
+
+  // Toggle collapsible sections
+  function toggleSection(header) {
+    const content = header.nextElementSibling;
+    header.classList.toggle('collapsed');
+    content.classList.toggle('collapsed');
   }
 </script>
 

@@ -479,6 +479,7 @@
       justify-content: center;
       background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
       border-radius: 12px;
+      object-fit: cover;
     }
 
     .cert-info h3 {
@@ -844,35 +845,46 @@
 
   <!-- ─── PROJECTS ─── -->
   <section id="projects">
-    <p class="section-label">(Selected Work)</p>
+    <p class="section-label"></p>
     <div class="projects-grid">
 
       <div class="project-card">
-        <img src="shopflow.jpg" alt="ShopFlow Project" class="project-thumb">
+        <img src="lockbox.jpg" alt="Lockbox Project" class="project-thumb">
         <div class="project-info">
-          <p class="project-tag">E-Commerce · 2025</p>
-          <h3>ShopFlow</h3>
-          <p>A full-stack e-commerce platform with real-time inventory, cart management, and Stripe payments integration.</p>
+          <p class="project-tag">FastAPI · JWT</p>
+          <h3>Lockbox</h3>
+          <p>Production-ready Authentication Microservice built with FastAPI (fully async) featuring JWT access tokens, rotating refresh tokens with DB-backed 
+revocation, and bcrypt password hashing — covering the complete auth lifecycle securely. Hardened against brute-force attacks via IP-based rate limiting, with tokens automatically invalidated on logout, ensuring zero token reuse and stateless-yet-secure session management. Ships with auto-generated Swagger UI, a full pytest test suite, and runs anywhere from a cloud server to a phone via Termux — plug-and-play auth backend ready for any application stack.</p>
           <a href="#" class="project-link">View Project →</a>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="taskr.jpg" alt="Taskr Project" class="project-thumb">
+        <img src="imarec.jpg" alt="Imarec Project" class="project-thumb">
         <div class="project-info">
-          <p class="project-tag">Productivity App · 2024</p>
-          <h3>Taskr</h3>
-          <p>A minimalist task management app built with React and Firebase, featuring drag-and-drop boards and team collaboration.</p>
+          <p class="project-tag">ML · CNN · CIFAR-10</p>
+          <h3>Imarec</h3>
+          <p>ImaRec is a full-stack Image Recognition Web App powered by a custom-trained Convolutional Neural Network (CNN) 
+            on the CIFAR-10 dataset, capable of classifying uploaded images into 10 categories — from animals to vehicles — 
+            directly in the browser. Built with Flask + TensorFlow/Keras, it accepts image uploads, runs them through the trained 
+            CNN model, and returns a real-time classification result via a clean HTML/CSS frontend — no external API, fully self-contained. 
+            Deployable anywhere with Gunicorn + Procfile support, and built with OpenCV for image preprocessing — a complete end-to-end ML 
+            pipeline from model training to web serving in one repo.</p>
           <a href="#" class="project-link">View Project →</a>
         </div>
       </div>
 
       <div class="project-card">
-        <img src="blogify.jpg" alt="Blogify Project" class="project-thumb">
+        <img src="DocBot.jpg" alt="DocBot Project" class="project-thumb">
         <div class="project-info">
-          <p class="project-tag">Blog Platform · 2024</p>
-          <h3>Blogify</h3>
-          <p>A clean, fast blogging platform with a custom CMS, markdown support, dark mode, and SEO optimisation baked in.</p>
+          <p class="project-tag">AI/ML · Keras · Tensorflow · NLP</p>
+          <h3>DocBot</h3>
+          <p>DocBot is an AI-powered Medical Chatbot that understands natural language to assist users with symptom checking, 
+            medical queries, and health consultations — powered by a custom-trained Neural Network (Keras .h5 model) with intent-based NLP classification.
+Built with Python + TensorFlow/Keras, it preprocesses user input using tokenization and lemmatization (stored via .pkl files), maps it to predefined medical 
+intents from a structured intents.json, and delivers contextual responses — all without any external API dependency.
+Served through a clean, interactive Streamlit web UI, the entire ML pipeline — from training to inference — lives in a single repo, making it instantly 
+runnable with one command: streamlit run chatbot.py.</p>
           <a href="#" class="project-link">View Project →</a>
         </div>
       </div>
@@ -886,7 +898,7 @@
     <div class="certifications-grid">
 
       <div class="certification-card">
-        <div class="cert-icon">🎓</div>
+        <img src="aws-cert.jpg" alt="AWS Certification" class="cert-icon">
         <div class="cert-info">
           <h3>AWS Certified Solutions Architect</h3>
           <p class="cert-issuer">Amazon Web Services</p>
@@ -896,7 +908,7 @@
       </div>
 
       <div class="certification-card">
-        <div class="cert-icon">🔒</div>
+        <img src="ceh-cert.jpg" alt="CEH Certification" class="cert-icon">
         <div class="cert-info">
           <h3>Certified Ethical Hacker (CEH)</h3>
           <p class="cert-issuer">EC-Council</p>
@@ -906,7 +918,7 @@
       </div>
 
       <div class="certification-card">
-        <div class="cert-icon">🐍</div>
+        <img src="python-cert.jpg" alt="Python Certification" class="cert-icon">
         <div class="cert-info">
           <h3>Python for Data Science</h3>
           <p class="cert-issuer">IBM</p>
@@ -916,7 +928,7 @@
       </div>
 
       <div class="certification-card">
-        <div class="cert-icon">☕</div>
+        <img src="java-cert.jpg" alt="Java Certification" class="cert-icon">
         <div class="cert-info">
           <h3>Oracle Certified Java Developer</h3>
           <p class="cert-issuer">Oracle</p>
